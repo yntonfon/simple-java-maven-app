@@ -8,7 +8,6 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-	}
 		tool name: 'Docker-Master', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'		
                 sh 'mvn -B -DskipTests clean package' 
             }
