@@ -1,12 +1,11 @@
 pipeline {
+    def dockerTool = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
+    env.PATH = "${dockerTool/bin:${env.PATH}"
     agent {
         docker {
             image 'maven:3-alpine' 
             args '-v /root/.m2:/root/.m2' 
         }
-    }
-    tools {
-        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
     }
     stages {
         stage('Build') { 
