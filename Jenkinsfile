@@ -1,12 +1,12 @@
 pipeline {
-    tools {
-        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
-    }
     agent {
         docker {
             image 'maven:3-alpine' 
             args '-v /root/.m2:/root/.m2' 
         }
+    }
+    tools {
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
     }
     stages {
         stage('Build') { 
