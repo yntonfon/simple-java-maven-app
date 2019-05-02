@@ -1,6 +1,6 @@
 pipeline {
     tools {
-        toto 'apache-maven-3.0.1'
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
     }
     agent {
         docker {
