@@ -1,4 +1,7 @@
 pipeline {
+    tools {
+        docker 'Docker-Master'
+    }
     agent {
         docker {
             image 'maven:3-alpine' 
@@ -8,7 +11,6 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-		tool name: 'Docker-Master', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'		
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
