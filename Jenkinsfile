@@ -1,6 +1,6 @@
 pipeline {
     tools {
-        docker 'Docker-Master'
+        org.jenkinsci.plugins.docker.commons.tools.DockerTool 'Docker-Master'
     }
     agent {
         docker {
