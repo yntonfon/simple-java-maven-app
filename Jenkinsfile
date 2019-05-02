@@ -1,6 +1,5 @@
 pipeline {
     tools {
-        #org.jenkinsci.plugins.docker.commons.tools.DockerTool 'docker'
         maven 'apache-maven-3.0.1'
     }
     agent {
